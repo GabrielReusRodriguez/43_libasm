@@ -20,8 +20,8 @@ section     .text
 ;Recuerda:
 ;   RDI primer arg
 ;   RSI Segundo arg
-;   RCX Tercer arg
-;   RDX Cuarto arg
+;   RDX Tercer arg
+;   RCX Cuarto arg
 
 
 ;Otra opcion es colocar la llamada en rax y llamar syscall. 

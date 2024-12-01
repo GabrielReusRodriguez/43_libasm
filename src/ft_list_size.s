@@ -5,8 +5,8 @@ global  ft_list_size
 ;Recuerda, 
 ;	RDI 1r arg
 ;	RSI 2o arg
-;	RCX 3r arg
-;	RDX 4o arg
+;	RDX 3r arg
+;	RCX 4o arg
 ;	RAX retorno.
 section .text
 

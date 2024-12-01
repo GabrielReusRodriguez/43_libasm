@@ -36,8 +36,8 @@ section .text
 ;Recuerda, 
 ;	RDI 1r arg  =>  t_list **begin_list
 ;	RSI 2o arg  =>  int (*cmp)()
-;	RCX 3r arg
-;	RDX 4o arg
+;	RDX 3r arg
+;	RCX 4o arg
 ;	RAX retorno.
 global  ft_list_sort
 

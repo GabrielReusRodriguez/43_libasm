@@ -6,8 +6,8 @@ global ft_list_push_front
 ;Recuerda, 
 ;	RDI 1r arg
 ;	RSI 2o arg
-;	RCX 3r arg
-;	RDX 4o arg
+;	RDX 3r arg
+;	RCX 4o arg
 ;	RAX retorno.
 
 ; Punteros son de 64 bits => 8 bytes
