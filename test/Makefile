@@ -1,7 +1,7 @@
 
-#CFLAGS = -Wall -Werror -Wextra -MP -MMD -fsanitize=address -fsanitize=leak
+CFLAGS = -Wall -Werror -Wextra -MP -MMD -fsanitize=address -fsanitize=leak
 
-CFLAGS = -Wall -Werror -Wextra -MP -MMD -g
+#CFLAGS = -Wall -Werror -Wextra -MP -MMD -g
 
 SRC_DIR = ./src
 OBJ_DIR = ./obj
@@ -12,6 +12,7 @@ SRC = 	test_ft_atoi_base.c			\
 		test_ft_list_push_front.c 	\
 		test_ft_list_size.c		 	\
 		test_ft_list_sort.c		 	\
+		test_ft_list_remove_if.c	\
 		test_strcpy.c				\
 		text_strcmp.c				\
 		test_strlen.c				\
@@ -29,6 +30,7 @@ all: 	${FOLDERS}	\
 		${BIN_DIR}/test_ft_list_push_front \
 		${BIN_DIR}/test_ft_list_size \
 		${BIN_DIR}/test_ft_list_sort \
+		${BIN_DIR}/test_ft_list_remove_if	\
 		${BIN_DIR}/test_strdup	\
 		${BIN_DIR}/test_strlen	\
 		${BIN_DIR}/test_strcpy	\
@@ -106,6 +108,12 @@ ${BIN_DIR}/test_ft_list_sort : ${OBJ_DIR}/test_ft_list_sort.o ${LIBASM}
 ${OBJ_DIR}/test_ft_list_sort.o: ${SRC_DIR}/test_ft_list_sort.c Makefile
 	cc ${CFLAGS} -I ${INC_DIR} -o $@ -c $<
 
+#Reglas ft_list_remove_if
+${BIN_DIR}/test_ft_list_remove_if : ${OBJ_DIR}/test_ft_list_remove_if.o ${LIBASM}
+	cc ${CFLAGS} -z execstack -o $@ ${OBJ_DIR}/test_ft_list_remove_if.o ${LIBASM}
+
+${OBJ_DIR}/test_ft_list_remove_if.o: ${SRC_DIR}/test_ft_list_remove_if.c Makefile
+	cc ${CFLAGS} -I ${INC_DIR} -o $@ -c $<
 
 ${LIBASM}:
 	make --no-print-directory all -C ../
