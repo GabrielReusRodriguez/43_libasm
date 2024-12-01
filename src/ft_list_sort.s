@@ -49,13 +49,9 @@ swap:
 	MOV	rcx, [r10]		; @ de node->content
 	MOV rax, [r11]		; @ de node->next->content
 
-	PUSH rax
 	MOV	[r11], rcx
-	POP	rax
 	MOV	[r10], rax
 
-;	PUSH rcx
-;	POP	rcx
 	JMP	next_ptr2
 
 ft_list_sort:
